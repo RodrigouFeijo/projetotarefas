@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-black/5">
+    <header id="header" class="bg-white shadow-lg flex justify-between items-center px-[60px] py-4 duration-150">
+        <div class="flex items-center gap-[70px]">
+            <h1 class="font-bold text-[26px]">Tarefas</h1>
+            <input class="bg-black/5 w-[500px] h-[46px] rounded pl-4" type="text" placeholder="Pesquisar">
+        </div>
+        <box-icon type='solid' name='moon' class="duration-150" onclick="mudarTema()"></box-icon>
+    </header>
+
+    <div class="px-[60px] pt-[60px]">
+        <div class="flex justify-between items-center">
+            <h2 class="font-bold text-[36px] text-black/50">Tarefas</h2>
+            <button
+                onclick="abrirGaveta()"
+                class="h-[46px] flex gap-4 items-center bg-black rounded px-4 text-white fill-white uppercase font-bold text-[12px]">
+                <box-icon type='solid' name='plus-circle'></box-icon>
+                Nova tarefa
+            </button>
+        </div>
+
+        <div id="lista-de-tarefas" class="grid grid-cols-4 gap-4 mt-8">
+            <div class="bg-white shadow rounded p-4">
+                <h3 class="font-bold">Titulo da tarefa</h3>
+                <p class="text-[14px] text-gray-500 line-clamp-3 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse illo qui blanditiis harum deleniti nisi dolorem, laboriosam tempore possimus necessitatibus? Quaerat quisquam praesentium quidem, rem nam quo ad voluptates aperiam.</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-[10px]">00/00/0000</span>
+                    <div class="flex gap-3">
+                        <box-icon name='pencil' ></box-icon>
+                        <box-icon name='trash'></box-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white shadow rounded p-4">
+                <h3 class="font-bold">Titulo da tarefa</h3>
+                <p class="text-[14px] text-gray-500 line-clamp-3 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse illo qui blanditiis harum deleniti nisi dolorem, laboriosam tempore possimus necessitatibus? Quaerat quisquam praesentium quidem, rem nam quo ad voluptates aperiam.</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-[10px]">00/00/0000</span>
+                    <div class="flex gap-3">
+                        <box-icon name='pencil' ></box-icon>
+                        <box-icon name='trash'></box-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sombra" onclick="fecharGaveta()" class="w-full h-screen bg-black/90 fixed top-0 left-0 duration-150 invisible opacity-0"></div>
+    <div id="gaveta" class="w-[400px] h-screen bg-white p-4 fixed top-0 right-0 duration-150 invisible opacity-0">
+        <h3 class="flex justify-between items-center text-[20px] font-bold">
+            Cadastrar
+            <box-icon name='x' onclick="fecharGaveta()"></box-icon>
+        </h3>
+    </div>
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
