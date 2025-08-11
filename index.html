@@ -28,38 +28,38 @@
             </button>
         </div>
 
-        <div id="lista-de-tarefas" class="grid grid-cols-4 gap-4 mt-8">
-            <div class="bg-white shadow rounded p-4">
-                <h3 class="font-bold">Titulo da tarefa</h3>
-                <p class="text-[14px] text-gray-500 line-clamp-3 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse illo qui blanditiis harum deleniti nisi dolorem, laboriosam tempore possimus necessitatibus? Quaerat quisquam praesentium quidem, rem nam quo ad voluptates aperiam.</p>
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-[10px]">00/00/0000</span>
-                    <div class="flex gap-3">
-                        <box-icon name='pencil' ></box-icon>
-                        <box-icon name='trash'></box-icon>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white shadow rounded p-4">
-                <h3 class="font-bold">Titulo da tarefa</h3>
-                <p class="text-[14px] text-gray-500 line-clamp-3 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse illo qui blanditiis harum deleniti nisi dolorem, laboriosam tempore possimus necessitatibus? Quaerat quisquam praesentium quidem, rem nam quo ad voluptates aperiam.</p>
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-[10px]">00/00/0000</span>
-                    <div class="flex gap-3">
-                        <box-icon name='pencil' ></box-icon>
-                        <box-icon name='trash'></box-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="lista-de-tarefas" class="grid grid-cols-4 gap-4 mt-8"></div>
     </div>
 
     <div id="sombra" onclick="fecharGaveta()" class="w-full h-screen bg-black/90 fixed top-0 left-0 duration-150 invisible opacity-0"></div>
     <div id="gaveta" class="w-[400px] h-screen bg-white p-4 fixed top-0 right-0 duration-150 invisible opacity-0">
-        <h3 class="flex justify-between items-center text-[20px] font-bold">
-            Cadastrar
-            <box-icon name='x' onclick="fecharGaveta()"></box-icon>
-        </h3>
+        <form id="formCriar" onsubmit="criarTarefa()">
+            <h3 class="flex justify-between items-center text-[20px] font-bold">
+                Cadastrar
+                <box-icon name='x' onclick="fecharGaveta()"></box-icon>
+            </h3>
+            <label for="titulo" class="block mb-1 font-bold">Titulo</label>
+            <input id="titulo" name="titulo" class="w-full h-[40px] mb-3 pl-3 border-2 border-slate-300 focus:border-black rounded" type="text" placeholder="Digite um titulo">
+
+            <label for="descricao" class="block mb-1 font-bold">Descrição</label>
+            <textarea id="descricao" name="descricao" class="w-full h-[120px] mb-3 pl-3 border-2 border-slate-300 focus:border-black rounded"></textarea>
+            
+            <button type="submit" class="w-full h-[40px] rounded bg-black text-white text-center font-bold cursor-pointer">Criar</button>
+        </form>
+        <form id="formEditar" onsubmit="editarTarefa()" class="hidden">
+            <h3 class="flex justify-between items-center text-[20px] font-bold">
+                Atualizar
+                <box-icon name='x' onclick="fecharGaveta()"></box-icon>
+            </h3>
+            <input type="hidden" name="tarefa_id">
+            <label for="titulo" class="block mb-1 font-bold">Titulo</label>
+            <input id="titulo" name="titulo" class="w-full h-[40px] mb-3 pl-3 border-2 border-slate-300 focus:border-black rounded" type="text" placeholder="Digite um titulo">
+
+            <label for="descricao" class="block mb-1 font-bold">Descrição</label>
+            <textarea id="descricao" name="descricao" class="w-full h-[120px] mb-3 pl-3 border-2 border-slate-300 focus:border-black rounded"></textarea>
+            
+            <button type="submit" class="w-full h-[40px] rounded bg-black text-white text-center font-bold cursor-pointer">Editar</button>
+        </form>
     </div>
 
 
